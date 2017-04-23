@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="col-sm-12">
+    <div class="row">
+      <p><a [routerLink]="['/user/'+answer._user._id]">{{answer._user.username}}</a>: {{answer.text}}</p> 
+      <button *ngIf="userLogin != answer._user.username" (click) = "upVote(answer._id)">{{answer.upvotes}} <span class="glyphicon glyphicon-chevron-up"></span></button>
+      <button *ngIf="userLogin != answer._user.username" (click) = "downVote(answer._id)">{{answer.downvotes}} <span class="glyphicon glyphicon-chevron-down"></span></button>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-10">
+          <p *ngFor="let comment of answer.comments">
+            <a [routerLink]="['/user/'+comment._user._id]">{{comment._user.username}}</a>: {{comment.text}}
+          </p>
+          <form  #formData="ngForm" (submit)="addComment()">
+            <div class="form-group">
+              <textarea name="comment" class="form-control" #comment="ngModel" [(ngModel)]="newComment.text" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled] = "!formData.form.valid">Comment</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

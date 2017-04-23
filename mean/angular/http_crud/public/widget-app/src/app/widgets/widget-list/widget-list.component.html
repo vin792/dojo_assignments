@@ -1,0 +1,11 @@
+<h3>Widget Inventory</h3>
+<ul *ngFor="let widget of _widgetService.widgets">
+  <li>
+    {{widget.title}}
+    <button (click) = "delete(widget)">Delete</button>
+    <button (click) = "edit(widget)">Edit</button>
+  </li>
+</ul>
+<app-widget-edit *ngIf="_widgetService.showEdit" [widget] = 'editWidget'></app-widget-edit>
+
+

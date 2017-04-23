@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full Friends</title>
+	<style type="text/css">
+		.button_edit{
+			display: inline-block;
+		}
+		p {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h3>Add Friends</h3>
+	<form action="/friends" method="POST">
+		<label>First Name: <input type="text" name="first_name"></label>
+		<label>Last Name: <input type="text" name="last_name"></label>
+		<label>Email: <input type="text" name="email"></label>
+		<input type="submit" value="add">
+	</form>
+	<h3>Current Friends</h3>
+	{% for friend in all_friends: %}
+	<div class = "friend_row">
+	   	<p>{{ friend['first_name'] }} {{ friend['last_name'] }} </p>
+	   	<form action='/friends/{{ friend['id'] }}/edit' class = "button_edit">
+	   		<input type="submit" value="edit">
+	   	</form>
+	   	<form action='/friends/{{ friend['id'] }}/delete' method="POST" class = "button_edit">
+	   		<input type="submit" value="delete">
+	   	</form>
+   	</div>
+	{% endfor %}
+
+</body>
+</html>

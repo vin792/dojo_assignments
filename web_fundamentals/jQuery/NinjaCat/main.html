@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ninja to Cat</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$('img').click(function(){
+					var index = Math.floor(Math.random()*10);
+					var images = $(this).data("alt-src")
+					$(this).attr('src',images[index]);
+					console.log(images[index]);
+				});
+
+			})
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<img src="img/cat0.png" alt="img_1" data-alt-src='["img/ninja1.png","img/ninja2.png","img/ninja3.png","img/ninja4.png","img/ninja0.png","img/cat0.png","img/cat1.png","img/cat2.png","img/cat3.png","img/cat4.png"]'>
+			<img src="img/cat0.png" alt="img_1" data-alt-src='["img/ninja1.png","img/ninja2.png","img/ninja3.png","img/ninja4.png","img/ninja0.png","img/cat0.png","img/cat1.png","img/cat2.png","img/cat3.png","img/cat4.png"]'>
+			<img src="img/cat0.png" alt="img_1" data-alt-src='["img/ninja1.png","img/ninja2.png","img/ninja3.png","img/ninja4.png","img/ninja0.png","img/cat0.png","img/cat1.png","img/cat2.png","img/cat3.png","img/cat4.png"]'>
+			<img src="img/cat0.png" alt="img_1" data-alt-src='["img/ninja1.png","img/ninja2.png","img/ninja3.png","img/ninja4.png","img/ninja0.png","img/cat0.png","img/cat1.png","img/cat2.png","img/cat3.png","img/cat4.png"]'>
+			<img src="img/cat0.png" alt="img_1" data-alt-src='["img/ninja1.png","img/ninja2.png","img/ninja3.png","img/ninja4.png","img/ninja0.png","img/cat0.png","img/cat1.png","img/cat2.png","img/cat3.png","img/cat4.png"]'>
+		</div>
+
+	</body>
+</html>

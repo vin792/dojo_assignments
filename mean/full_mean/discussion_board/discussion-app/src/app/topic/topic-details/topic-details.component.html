@@ -1,0 +1,38 @@
+<div *ngIf="validLogin.status">
+  <div class="container-fluid">
+    <div class="row" id="header">
+      <div class="col-sm-6">
+        <h1>Topic Details</h1>
+      </div>
+      <div class="col-sm-offset-4 col-sm-2">
+        <br>
+        <div class="btn-group">
+          <a [routerLink] = "['/dashboard']" class="btn btn-link">Dashboard</a>
+          <button class="btn btn-link" (click) = "logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h5><a [routerLink]="['/user/'+topicDetails?._user?._id]">{{topicDetails?._user?.username}}</a> Posted a topic: <strong>{{topicDetails?.title}}</strong></h5>
+        <p>Description: {{topicDetails?.description}}</p>
+        <form  #formData="ngForm" (submit)="addAnswer()">
+          <h5>Post your answer here...</h5>
+          <div class="form-group">
+            <label for="answer"></label>
+            <textarea name="answer" class="form-control" #answer="ngModel" [(ngModel)]="newAnswer.text" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled] = "!formData.form.valid">Post</button>
+        </form>
+        <br>
+        <div *ngFor="let answer of topicDetails?.answers">
+          <hr>
+          <app-topic-details-answer [answer] = "answer" (newCommentAdded) = "getTopic()" [userLogin] = "validLogin.message"></app-topic-details-answer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!validLogin.status">
+  Not logged in!!!!
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Disappearing Ninja</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$('button').click(function(){
+					$('img').removeClass("hidden_img");
+				});
+
+				$('img').click(function(){
+					$(this).addClass("hidden_img");
+				})
+			})
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="sonics_images">
+				<img src="sonics.jpg" alt="sonics">
+				<img src="sonics1.jpg" alt="sonics1">
+				<img src="sonics2.jpg" alt="sonics2">
+				<img src="sonics3.jpg" alt="sonics3">
+				<img src="sonics4.jpg" alt="sonics4">
+				<img src="sonics5.jpg" alt="sonics5">
+				<img src="sonics6.jpg" alt="sonics6">
+				<img src="sonics7.jpg" alt="sonics7">
+			</div>
+			<button type="button" id="restore">Restore</button>
+		</div>
+	</body>
+</html>

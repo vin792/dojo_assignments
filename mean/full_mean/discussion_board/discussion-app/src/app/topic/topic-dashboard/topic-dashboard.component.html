@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div *ngIf="validLogin.status">
+    <div class="col-sm-12">
+      <div class="row">
+        <h1>Welcome, {{validLogin.message}}</h1>
+      </div>
+      <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="search">Filter by Topic</label>
+                <input type="text" [(ngModel)] = "search" name="mysearch" (input) = "filterTable(mysearch.value)" class="form-control" #mysearch>
+            </div>
+        </form>
+        <app-topic-dashboard-list [topics] = "topics"></app-topic-dashboard-list>
+      </div>
+      <div class="row">
+        <app-topic-dashboard-create (newTopicAdded)="getTopics()"></app-topic-dashboard-create>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!validLogin.status">
+  </div>
+</div>

@@ -1,0 +1,15 @@
+function binarySearchTwo(arr, val){
+  let start = 0;
+  let end = arr.length - 1;
+  while(start <= end){
+    let midIdx = Math.floor((end + start)/2);
+    if(arr[midIdx] == val) return true;
+    if(arr[midIdx] > val){
+      end = midIdx - 1;
+    }
+    else {
+      start = midIdx + 1;
+    }
+  }
+  return false;
+}

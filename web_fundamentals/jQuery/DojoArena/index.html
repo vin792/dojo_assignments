@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Street Fighter</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+		<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$("button").mouseover(function(){
+				var back_img = $(this).text();
+				$("#background").css("background-image", "url(\""+back_img+".jpg\")");
+			});
+
+			$("button").mouseout(function(){
+				$("#background").css("background-image", "");
+			});
+
+			$("button").click(function(){
+				var back_img = $(this).text();
+				$("#background").css("background-image", "url(\""+back_img+".jpg\")");
+				$("h1").text("Select Players");
+				$("#buttons").html("<select id=\"player1\" data-atr=\"1\"><option value=\"donny\">donny</option><option value=\"leo\">leo</option><option value=\"mikey\">mikey</option><option value=\"raphael\">raphael</option></select><select id=\"player2\" data-atr=\"2\"><option value=\"donny\">donny</option><option value=\"leo\">leo</option><option value=\"mikey\">mikey</option><option value=\"raphael\">raphael</option></select>");
+				$("#background").append("<img id=\"img1\" src=\"donny.png\"><img id=\"img2\" src=\"donny.png\">");
+
+			});
+
+			$("#select_arena").on('change',"select", function(){
+				var temp = $(this).val();
+				var player = $(this).attr("data-atr");
+				$("#img"+player).attr("src", temp+".png");
+			});
+
+		})
+			
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="background">
+				<div id="select_arena">
+					<h1>Select Arena</h1>
+					<div id="buttons">
+						<button>beach</button>
+						<button>planet</button>
+						<button>dojo</button>
+						<button>forest</button>
+						<button>matrix</button>
+						<button>snow</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

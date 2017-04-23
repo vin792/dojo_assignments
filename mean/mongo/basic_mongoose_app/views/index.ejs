@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mongoose Test</title>
+</head>
+<body>
+    <form action='/users' method='post'>
+        Name: <input type='text' name='name'>
+        Age: <input type='number' name='age'>
+        <input type='submit' value='submit'>
+    </form>
+    <div id="my users">
+        <ul>
+            <% for (i=0; i<users.length; i++) { %>
+                <li><%= users[i]['name'] %>, <%= users[i]['age'] %> </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

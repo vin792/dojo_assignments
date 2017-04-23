@@ -1,0 +1,27 @@
+// Example of setting custom error messages on server side
+var Schema = mongoose.Schema;
+var MessageSchema = new mongoose.Schema({
+	name: String,
+	message: String,
+	_comments: [{type: Schema.Types.ObjectId, ref: 'Comment'}]
+});
+MessageSchema.path('name').required(true, 'Name cannot be blank');
+MessageSchema.path('message').required(true, 'Message cannot be blank');
+mongoose.model("Message", MessageSchema);
+var Message = mongoose.model("Message");
+var CommentSchema = new mongoose.Schema({
+	name: String,
+	text: String,
+	_message: {type: Schema.Types.ObjectId, ref: 'Message'}
+});
+CommentSchema.path('name').required(true, 'Name cannot be blank');
+CommentSchema.path('text').required(true, 'Comment cannot be blank');
+mongoose.model("Comment", CommentSchema);
+var Comment = mongoose.model("Comment");
+
+//Example of setting error messages client side
+<% if(typeof(errors) != 'undefined' ) { %>
+	     <% for (var x in errors) { %>
+	      <h3><%= errors[x].message %></h3>
+	     <% } %>
+ 	 <% } else { %>

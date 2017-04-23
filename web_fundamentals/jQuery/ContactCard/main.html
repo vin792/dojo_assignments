@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Cards</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				$("form").submit(function(){
+					$("#contact_card_holder").append("<div class=\"contact_card\" data-alt-src=\""+$("#description").val()+"\"><h1>"+$("#first_name").val()+"&nbsp;"+$("#last_name").val()+"</h1><p>Click here for description</p></div>")
+					return false;
+				});
+
+				$('#contact_card_holder').on('click','.contact_card', function(){
+					var temp = $(this).html();
+					var temp2 = $(this).attr("data-alt-src");
+					$(this).html("<h5>"+temp2+"<h5>");
+					$(this).attr("data-alt-src",temp);
+				});
+
+			})
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<form id="add_contact_info">
+				<label for="first_name">First Name:</label>
+				<input type="text" name="first_name" id="first_name">
+				<label for="last_name">Last Name:</label>
+				<input type="text" name="last_name" id="last_name">
+				<label for="last_name">Description</label>
+				<textarea type="text" name="description" id="description" rows="9"></textarea>
+				<input type="submit" value="Add User">
+			</form>
+			<div id="contact_card_holder">
+			</div>
+		</div>
+	</body>
+</html>

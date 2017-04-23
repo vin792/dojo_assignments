@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game of Thrones</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+		<script type="text/javascript">
+			
+			$(document).ready(function(){
+				alert("It's working!")
+				$("img").click(function(){
+
+					var houseName = $(this).attr("data-name");
+					var url = "https://www.anapioficeandfire.com/api/houses?name="+houseName;
+
+					$.get(url, function(res){
+
+						var name = "Name: "+res[0].name;
+
+						var words = "Words: "+res[0].words;
+
+						var titles = "Titles: ";
+
+						for (var i=0; i < res[0].titles.length-1; i++){
+							titles+=res[0].titles[i]+", ";
+						}
+
+						titles+=res[0].titles[res[0].titles.length-2];
+
+						$("#name").text(name);
+						$("#words").text(words);
+						$("#titles").text(titles);
+
+					},'json');
+				});
+			});
+
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="images">
+				<img src="gameofthrones/stark.jpg" data-name="House Stark of Winterfell">
+				<img src="gameofthrones/targaryen.jpg" data-name="House%20Targaryen%20of%20King's Landing">
+				<img src="gameofthrones/lannister.jpg" data-name="House Lannister of Casterly Rock">
+				<img src="gameofthrones/baratheon.png" data-name="House Baratheon of Storm's End">
+			</div>
+			<div id="description">
+				<h5 id="name"></h5>
+				<h5 id="words"></h5>
+				<h5 id="titles"></h5>
+			</div>
+		</div>
+	</body>
+</html>

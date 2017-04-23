@@ -1,0 +1,13 @@
+<h3>Create Task</h3>
+<form (submit)='onSubmit()' #formData='ngForm'>
+    Title:<input type="text" name="title" #title='ngModel' [(ngModel)] = 'newTask.title' required>
+    Description:<input type="text" name="content" #content='ngModel' [(ngModel)] = 'newTask.content' required>
+    <button type="submit" [disabled] = '!formData.form.valid'>Add Task</button>
+</form>
+<h3>Tasks List</h3>
+<div *ngFor="let task of _taskService.tasks">
+    {{task.title}}
+</div>
+{{subKey}}
+{{subKey2 | json}}
+    

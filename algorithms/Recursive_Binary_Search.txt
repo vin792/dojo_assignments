@@ -1,0 +1,20 @@
+function binarySearch(arr, val){
+  return find(arr, 0, arr.length-1, val);
+}
+
+function find(arr, start, end, val){
+  let midIdx = Math.floor((end + start)/2);
+
+  if(arr[midIdx] == val){
+    return true;
+  }
+  if(start > end){
+    return false;
+  }
+  else if(arr[midIdx] > val){
+    return find(arr, start, midIdx - 1, val)
+  }
+  else if(arr[midIdx] < val){
+    return find(arr, midIdx + 1, end, val)
+  }
+}

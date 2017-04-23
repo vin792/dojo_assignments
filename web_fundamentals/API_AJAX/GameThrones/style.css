@@ -1,0 +1,27 @@
+*{
+	border:0;
+	margin:0;
+	padding:0;
+	/*outline: 1px dotted red;*/
+}
+
+img{
+	display: inline-block;
+	width: 200px;
+	height: 112.5px;
+	margin: 0px auto;
+}
+h5{
+	margin-bottom: 20px;
+}
+#container{
+	width: 815px;
+	margin: 0px auto;
+}
+#description{
+	margin: 0px auto;
+	margin-top: 20px;
+	width: 300px;
+	border: 1px solid black;
+	padding: 15px;
+}

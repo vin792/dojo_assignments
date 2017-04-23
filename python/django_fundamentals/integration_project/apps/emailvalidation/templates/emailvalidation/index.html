@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Email Validation</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid col-sm-6 col-sm-offset-3">
+			{% if not request.session.valid_email %}
+			<div class="row">
+				<div class="panel panel-danger">
+  					<div class="panel-body">Email is not valid!</div>
+				</div>
+			</div>
+			{% endif %}
+			<div class="row">
+				<form action="/create" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="email">Email Address:</label>
+						<input type="email" class="form-control" name="email">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title></title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<table class="table table-striped">
+					<h2>Products</h2>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Actions</th>
+					</tr>
+					{% for product in products %}
+						<tr>
+							<td>{{ product.name }}</td>
+							<td>{{ product.description }}</td>
+							<td>{{ product.price }}</td>
+							<td><a href="{% url 'products:show' product.id %}">Show</a> | <a href="{% url 'products:edit' product.id %}">Edit</a><form action="{% url 'products:destroy' product.id %}" method="post">{% csrf_token %}<button class="btn btn-danger" type="submit">Remove</button></form></td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+			<div class="row">
+				<a href="{% url 'products:new' %}" class="btn btn-primary">Add Product</a>
+			</div>
+		</div>
+	</body>
+</html>

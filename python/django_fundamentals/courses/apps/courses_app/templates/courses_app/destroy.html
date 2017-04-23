@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>Course Description</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid col-sm-offset-1">
+			<div class="row col-sm-12">
+				<h1>Are you sure you want to delete the following course?</h1>
+				{% for course in courses %}
+					<h3>Name: {{ course.name }}</h3>
+					<h3>Description: {{ course.description.description }}</h3>
+				{% endfor %}
+			</div>
+			<div class="row">
+				<div class="btn-group col-sm-8">
+				{% for course in courses %}
+					<form>
+						{%csrf_token%}
+						<button type="submit" class="btn btn-primary" formaction="/destroy/{{ course.id }}" formmethod = 'post'>Yes, Delete Course</button>
+						<button type="submit" class="btn btn-default" formaction="/">No, Don't Delete</button>
+					</form>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

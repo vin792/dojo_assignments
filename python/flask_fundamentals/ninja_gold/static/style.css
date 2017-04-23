@@ -1,0 +1,6 @@
+#text{
+	height: 100px;
+	width: 500px;
+	outline: 1px solid black;
+	overflow: auto;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Owls</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">   
+                <h1>Owl Pack</h1>
+                <ul class="list-group">
+                    <% for (i=0; i<owls.length; i++) { %>
+                        <li class="list-group-item"> <a href="/owls/<%= owls[i].id%>"><%= owls[i].name %></a></li>
+                    <% } %>
+                    <li class="list-group-item"><a href="/owls/new">Add new owl</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

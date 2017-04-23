@@ -1,0 +1,129 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	/*outline: 1px dotted red;*/
+}
+#container{
+	margin: 0 auto;
+	width: 900px;
+	height: 680px;
+	background-color: #DCE0D3;
+	padding: 15px;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+/*----header stylings----*/
+#header{
+	width: 900px;
+	height: 60px;
+	background-color: #00B5AF;
+}
+#github_icon_img{
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#header_title{
+	display: inline-block;
+	color: #032638;
+	vertical-align: top;
+	margin-top: 15px;
+}
+#nav_menu{
+	display: inline-block;
+	list-style-type: none;
+	vertical-align: top;
+	margin-top: 20px;
+	margin-left: 140px;
+}
+#nav_menu li{
+	display: inline;
+	text-decoration: underline;
+	color: white;
+	font-size: .7em;
+	margin: 0px 3px;
+}
+
+/*----main content stylings----*/
+#main_content{
+	width: 870px;
+	height: 500px;
+	margin-top: 15px;
+	padding: 15px;
+	background-color: #FCEA8B;
+}
+#left_rail{
+	width: 239px;
+	height: 500px;
+	margin-right: 29px;
+	background-color: #004145;
+	display: inline-block;
+	vertical-align: top;
+}
+.box_title{
+	color: #E2E5D8;
+	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+.box_text{
+	color: #E2E5D8;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	font-size: .75em;
+}
+#right_rail{
+	width: 580px;
+	height: 500px;
+	display: inline-block;
+}
+.box1{
+	width: 165px;
+	height: 165px;
+	background-color: #004145;
+	display: inline-block;
+	vertical-align: top;
+}
+.box2{
+	width: 267px;
+	height: 134px;
+	display: inline-block;
+	background-color: #004145;
+	margin-top: 29px;
+	vertical-align: top;
+}
+#bottom_row{
+	width:572px;
+	height:134px;
+	background-color: #004145;
+	margin-top: 29px;
+}
+#middle_padding{
+	margin-right: 29px;
+	margin-left: 29px;
+}
+#left_padding{
+	margin-right: 29px;
+}
+.small_box_title{
+	color: #E2E5D8;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+.blue_text{
+	color: #00B5AF;
+}
+
+/*----footer stylings----*/
+#footer{
+	width: 900px;
+	height: 60px;
+	margin-top: 15px;
+	background-color: #00B5AF;
+	text-align: center;
+	line-height: 60px;
+	font-size: .7em;
+}

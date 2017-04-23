@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+</head>
+<body>
+	<h3>Counter</h3>
+	<p>{{session['count']}}</p>
+	<form action='/countincrease' method="POST">
+		<input type="submit" value="+2">
+	</form>
+	<form action='/reset' method="POST">
+		<input type="submit" value="reset">
+	</form>
+</body>
+</html>

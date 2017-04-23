@@ -1,0 +1,49 @@
+//CREATE DB
+use my_first_db
+//CREATE COLLECTION
+db.createCollection("students)
+//ADD STUDENTS
+db.students.insert({name: "Michael", home_state: "WA", lucky_number: 3, birthday: {month: 3, day: 14, year: 1992}})
+db.students.insert({name: "Tony", home_state: "NY", lucky_number: 13, birthday: {month: 4, day: 20, year: 1985}})
+db.students.insert({name: "Pablo", home_state: "MA", lucky_number: 21, birthday: {month: 1, day: 1, year: 1980}})
+db.students.insert({name: "Vanessa", home_state: "TX", lucky_number: 18, birthday: {month: 6, day: 12, year: 1993}})
+db.students.insert({name: "Rachael", home_state: "OR", lucky_number: 12, birthday: {month: 5, day: 24, year: 1990}})
+//FIND ALL STUDENTS
+db.students.find().pretty()
+//FIND ALL STUDENTS FROM CA
+db.students.find({home_state: "CA"})
+//FIND ALL STUDENTS FROM WA
+db.students.find({home_state: "WA"})
+//FIND ALL STUDENTS FROM WA or CA
+db.students.find({ $or: [{home_state: "WA"}, {home_state: "CA"}]}).pretty()
+//LUCKY # GREATER THAN 3
+db.students.find({lucky_number: {$gt: 3}}).pretty()
+//LUCKY # LTE TO 10
+db.students.find({lucky_number: {$lte: 10}}).pretty()
+//LUCKY # GT 1 LT 9
+db.students.find({$and: [{lucky_number: {$gte: 1}}, {lucky_number: {$lte: 9}}]})
+//ADD NEW ARRAY 'INTERESTS' TO ALL DOCUMENTS
+db.students.update({}, {$set: {interests: ["coding", "brunch", "MongoDB"]}}, {upsert:false, multi:true})
+//ADD INTERESTS TO EACH STUDENT
+db.students.update({name: "Michael"}, {$addToSet: {interests: "snowboarding"}}, {upsert:false})
+db.students.update({name: "Tony"}, {$addToSet: {interests: "skiing"}}, {upsert:false})
+db.students.update({name: "Pablo"}, {$addToSet: {interests: "basketball"}}, {upsert:false})
+db.students.update({name: "Vanessa"}, {$addToSet: {interests: "MMA"}}, {upsert:false})
+db.students.update({name: "Rachael"}, {$addToSet: {interests: "hip-hop"}}, {upsert:false})
+//ADD AND REMOVE TAX INTEREST
+db.students.update({name: "Rachael"}, {$addToSet: {interests: "taxes"}}, {upsert:false})
+db.students.update({name: "Rachael"}, {$pop: {interests: 1}})
+//REMOVE DOCUMENTS
+db.students.remove({home_state: "WA"})
+db.students.remove({name: "Pablo"})
+db.students.remove({lucky_number: {$gt: 5}}, true)
+//INSERT NEW BELT FIELD
+db.students.update({}, {$set: {number_of_belts: 0}}, {upsert:false, multi:true})
+//INCREASE BELT FIELD VAL BY 1
+db.students.update({home_state: "WA"}, {$inc: {number_of_belts: 1}}, {upsert:false, multi:true})
+//CHANGE BELT NAME FIELD ON DOCUMENTS
+db.students.update({}, {$rename: {'number_of_belts': 'belts_earned'}}, {multi:true})
+//REMOVE LUCKY NUMBER FIELD FROM DOCUMENTS
+db.students.update({}, {$unset: {lucky_number: ""}}, {multi:true})
+//ADD CURRENT DATE FIELD
+db.students.update({}, {$currentDate: {updated_on: true}}, {multi:true})

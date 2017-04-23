@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Test Express</title>
+    </head>
+    <body>
+        <h2>Here are all my users</h2>
+        <% for (i=0;i < users_array.length;i++) { %>
+            <h3>Name: <%= users_array[i].name %> </h3>
+            <h3>Email: <%= users_array[i].email %> </h3>
+            <hr>
+        <% } %>
+    </body>
+</html>

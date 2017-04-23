@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Wall Login</title>
+		<style type="text/css">
+			.form{
+				margin-bottom: 20px;
+			}
+
+			p{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>The Wall</h1>
+		<h3>Register</h3>
+		<form action='/register' method='post'>
+			<label name='first_name'>First name: <input type='text' name='first_name'></label>
+			<label name='last_name'>Last name: <input type='text' name='last_name'></label>
+			<label name='email'>Email: <input type='text' name='email'></label>
+			<label name='password'>Password: <input type='text' name='password'></label>
+			<label name='password_confirmation'>Password Confirmation: <input type='text' name='password_confirmation'></label>
+			<input type='submit' value='Register'>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						{% if category == 'registration' %}
+						<p> {{ message }} <p>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endwith%}
+		</form>
+		<h3>Login</h3>
+		<form action='/login' method='post'>
+			<label name='email'>Email: <input type='text' name='email'></label>
+			<label name='password'>Password: <input type='text' name='password'></label>
+			<input type='submit' value='Login'>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						{% if category == 'login' %}
+						<p> {{ message }} <p>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endwith%}
+		</form>
+	</body>
+</html>

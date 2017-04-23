@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>User Name</th>
+    <th>Posts</th>
+  </tr>
+  <tr *ngFor="let topic of topics">
+    <td>{{topic.category}}</td>
+    <td><a [routerLink]="['/topic/'+topic._id]">{{topic.title}}</a></td>
+    <td><a [routerLink]="['/user/'+topic._user._id]">{{topic._user.username}}</a></td>
+    <td>{{topic.answers.length}}</td>
+  </tr>
+</table>
+

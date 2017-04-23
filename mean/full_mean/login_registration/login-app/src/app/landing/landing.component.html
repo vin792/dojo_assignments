@@ -1,0 +1,8 @@
+<div *ngIf="_userService.user">
+  There's a logged in user!!!!
+  <button (click)="logout()" class="btn btn-primary">Logout</button>
+</div>
+<div *ngIf="!_userService.user">
+  Must be logged in to view page!!!!
+</div>
+

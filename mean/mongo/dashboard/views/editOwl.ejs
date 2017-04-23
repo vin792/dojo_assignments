@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Owls</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1><%= owl[0].name %></h1>
+            <form action='/owls/<%= owl[0]._id%>' method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= owl[0].name %>">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" name="age" value="<%= owl[0].age %>">
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Update Owl</button>
+                    <button type="submit" class="btn btn-danger" formaction="/owls/destroy/<%= owl[0]._id%>">Delete Owl</button>
+                    <a href="/owls/<%= owl[0]._id%>" class="btn btn-link">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

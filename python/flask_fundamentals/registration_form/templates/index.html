@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dojo Survey</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<form action="/results" method="post">
+			<div class="form_block">
+				<label class="form_name">Email:</label>
+				<input type="text" name="email">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "email_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<label class="form_name">First Name:</label>
+				<input type="text" name="first_name">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "first_name_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<label class="form_name">Last Name:</label>
+				<input type="text" name="last_name">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "last_name_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<label class="form_name">Password:</label>
+				<input type="text" name="password">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "password_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<label class="form_name">Confirm Password:</label>
+				<input type="text" name="confirm_password">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "password_confirm_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<label class="form_name">Birthday:</label>
+				<input type="date" name="birthday">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "birthday_check" %}
+								<p>{{ message }}</p>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+			<div class="form_block">
+				<input type="submit" value="submit">
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+							{% if category == "form_check" %}
+								<h3>{{ message }}</h3>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</div>
+		</form>
+	</body>
+</html>

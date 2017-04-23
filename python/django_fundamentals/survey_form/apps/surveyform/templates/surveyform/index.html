@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Survey Form</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<form action="/survey/process" class="col-sm-6 col-sm-offset-3" method="post">
+			{% csrf_token %}
+			<h1>Dojo Survey</h1>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" name="name">
+			</div>
+			<div class="form-group">
+				<label for="location">Dojo Location:</label>
+				<select class="form-control" name="location">
+					<option>Seattle</option>
+					<option>Chicago</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="language">Favorite Language</label>
+				<select class="form-control" name="language">
+					<option>Python</option>
+					<option>Javascript</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="comment">Comment:</label>
+				<textarea class="form-control" name="comment"></textarea>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	</body>
+</html>

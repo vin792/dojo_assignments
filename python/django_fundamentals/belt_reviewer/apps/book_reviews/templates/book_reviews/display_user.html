@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>User Reviews</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row" id="header">
+				<div class="col-sm-6" id="name">
+					<h2>About {{ selected_user.first_name.title }}</h2>
+				</div>
+				<div class="col-sm-3 col-sm-offset-3" id="actions">
+					<br>
+					<div class="btn-group">
+  						<a href="{% url 'books:index' %}" class="btn btn-link">Home</a>
+  						<a href="{% url 'books:add_book' %}" class="btn btn-link">Add Book and Review</a>
+  						<a href="{% url 'login:index' %}" class="btn btn-link">Logout</a>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="content">
+				<div class="col-sm-6">
+					<h4>User Alias: {{ selected_user.first_name.title }}</h4>
+					<h4>Name: {{ selected_user.first_name.title }} {{ selected_user.last_name.title }}</h4>
+					<h4>Email: {{ selected_user.email }}</h4>
+					<h4>Reviews: {{ selected_user.user_reviews.count }}</h4>
+					<br>
+					<ul class="list-group">
+						<h4>Posted reviews on the following books</h4>
+						{% for book_reviewed in selected_user.user_reviews.all %}
+							<li class="list-group-item"><a href="{% url 'books:display_book' book_reviewed.book_id.id %}">{{ book_reviewed.book_id.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

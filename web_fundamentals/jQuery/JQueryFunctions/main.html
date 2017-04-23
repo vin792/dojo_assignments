@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JQuery Function</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#click").click(function(){
+				alert("click");
+			});
+
+			$("#hide").click(function(){
+				$("#p_hide").hide();
+			});
+
+			$("#show").click(function(){
+				$("#p_show").show();
+			});
+
+			$("#toggle").click(function(){
+				$("#p_toggle").toggle();
+			});
+
+			$("#slide_down").click(function(){
+				$("#p_slide_down").slideDown();
+			});
+
+			$("#slide_up").click(function(){
+				$("#p_slide_up").slideUp();
+			});
+
+			$("#slide_toggle").click(function(){
+				$("#p_slide_toggle").slideToggle();
+			});
+
+			$("#fade_in").click(function(){
+				$("#p_fade_in").fadeIn();
+			});
+
+			$("#fade_out").click(function(){
+				$("#p_fade_out").fadeOut();
+			});
+
+			$("#add_class").click(function(){
+				$("p").addClass("myClass");
+			});
+
+			$("#before").click(function(){
+				$("#container").before($("button"));
+			});
+
+			$("#after").click(function(){
+				$("h1").after($("#show"));
+			});
+
+			$("#append").click(function(){
+				$(".jquery_function").after("test");
+			});
+
+			$("#html").click(function(){
+				$("#append").html("<p>test</p>");
+				var html = $("#p_attr").html();
+				console.log(html)
+			});
+
+			$("#attr").click(function(){
+				$("#p_attr").attr("style","color: green");
+				var attribute = $("#p_attr").attr("style");
+				console.log(attribute)
+			});
+
+			$("#val").click(function(){
+				// var text = $(this).text();
+				$("input").val($(this).text());
+			});
+
+			$("#data").click(function(){
+				var value = $("#data").data("blah", 86);			
+				console.log(value);
+				$("span").text(" " + value);
+			});
+
+		})
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="jquery_function">
+				<h1>Click</h1>
+				<button id="click" type="button">Click</button>
+				<p>Click action JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Hide</h1>
+				<button id="hide" type="button">Hide</button>
+				<p id="p_hide">Hide JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Show</h1>
+				<button id="show" type="button">Show</button>
+				<p id="p_show">Show JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Toggle</h1>
+				<button id="toggle" type="button">Toggle</button>
+				<p id="p_toggle">Toggle JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>SlideDown</h1>
+				<button id="slide_down" type="button">Slide Down</button>
+				<p id="p_slide_down">Slide Down JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>SlideUp</h1>
+				<button id="slide_up" type="button">Slide Up</button>
+				<p id="p_slide_up">Slide Up JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>SlideToggle</h1>
+				<button id="slide_toggle" type="button">Slide Toggle</button>
+				<p id="p_slide_toggle">Slide Toggle JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>FadeIn</h1>
+				<button id="fade_in" type="button">Fade In</button>
+				<p id="p_fade_in">Fade In JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>FadeOut</h1>
+				<button id="fade_out" type="button">Fade Out</button>
+				<p id="p_fade_out">Fade Out JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>AddClass</h1>
+				<button id="add_class" type="button">Add Class</button>
+				<p id="p_add_class">Add Class JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Before</h1>
+				<button id="before" type="button">Before</button>
+				<p id="p_before">Before JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>After</h1>
+				<button id="after" type="button">After</button>
+				<p id="p_after">After JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Append</h1>
+				<button id="append" type="button">Append</button>
+				<p id="p_append">Append JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>HTML</h1>
+				<button id="html" type="button">HTML</button>
+				<p id="p_html">html JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Attr</h1>
+				<button id="attr" type="button">Attr</button>
+				<p id="p_attr">Attr JQuery</p>
+			</div>
+			<div class="jquery_function">
+				<h1>Val</h1>
+				<button id="val" type="button">Val</button>
+				<input id="p_val" value="click button">
+			</div>
+			<div class="jquery_function">
+				<h1>Data</h1>
+				<button id="data" type="button">Val</button>
+				<p id="p_attr">Attr JQuery<span>?</span></p>
+			</div>
+		</div>
+
+	</body>
+</html>

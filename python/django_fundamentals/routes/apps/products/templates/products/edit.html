@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title></title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid">
+			<form action="{% url 'products:update' product.id %}" method="post">
+				{% csrf_token %}
+				<h2>Product {{ product.id }}</h2>
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" name="name" value="{{ product.name }}" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Description</label>
+					<input type="text" name="description" value="{{ product.description }}" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Price</label>
+					<input type="number" step="any" name="price" value="{{ product.price }}" class="form-control">
+				</div>
+				<button class="btn btn-primary" type="submit">Update</button>
+			</form>
+			<ul class="list-group">
+				{% for message in messages %}
+					<li class="list-group-item list-group-item-danger">{{message}}</li>
+				{% endfor %}
+			</ul>
+			<a href="{% url 'products:index' %}">Go Back</a> | <a href="{% url 'products:show' product.id %}">Show</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+table{
+	border: 1px solid black;
+}
+table th{
+	padding-right: 75px;
+}
+input {
+	display:block;
+	margin-bottom: 10px;
+}
+h1 {
+	margin-top: 50px;
+}
+#add_user{
+	width: 150px;
+}

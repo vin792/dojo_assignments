@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>The Internet</title>
+		<meta charset="utf-8">
+		<meta name="description" content="About the internet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<img src="images/globe.png" height="100" width="100" id="globe" alt="globe">
+				<h1 id="internet_header">The Inter<span class="blue_text">net</span></h1>
+				<h1 id="www_header">The World Wide Web</h1>
+			</div>
+			<div id="left_rail">
+				<p id="left_rail_question">So what's an <span id="internet_question">Internet?</span></p>
+				<p id="left_rail_answer">An <span class="blue_text">Inter</span>connected <span class="blue_text">Net</span>work of computers all around the world!</p>
+				<p id="video_button">WATCH A VIDEO</p>
+				<p id="resource_button">MORE RESOURCES</p>
+				<hr id="line">
+				<div id="ad">
+					<h2 id="ad_header">Reinvent your career in just 14 weeks</h2>
+					<img src="images/ninja.png" alt="ninja" height="122" width="90">
+					<p id="learn_more">Learn More <span id="arrows">>>></span></p>
+				</div>
+			</div>
+			<div id="main_content">
+				<div id="main_content_header">
+					<div id="home">
+						<img src="images/home.png" width="20" height="20" id="img_home" alt="home">
+						<p id="p_home">DNS</p>
+					</div>
+					<div id="phone">
+						<img src="images/phone.png" width="40" height="40" alt="phone">
+						<div id="phone_text">
+							<p class="date">Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
+							<h2 id="phone_number">855.967.3787</h2>
+							<p class="date">International +1.617.963.0555</p>
+						</div>
+					</div>
+				</div>
+				<hr id="line_main_content">
+				<h2 class="main_content_heading_text">Clients and Servers</h2>
+				<p class="main_content_body_text">Computers Connected to the <span class="light_blue_text">Web</span> are called <span class="bold">clients</span> and <span class="bold">servers</span></p>
+				<ul class="main_content_body_lists">
+					<li><span class="light_blue_text">Clients</span> are the typical Web user's internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and <span class="light_blue_text">Web-accessing software</span> available on those devices (usually a web browser like Firefox or Chrome)</li>
+					<li><span class="light_blue_text">Servers</span> are computers that store <span class="light_blue_text">webpages, sites</span> or <span class="light_blue_text">apps</span>. When a client devices wants to access a webpage, a copy of the webpage is downloaded rom the server onto the client manchine to be displayed in the user's web browser.</li>
+				</ul>
+				<img src="images/client_server.jpg" alt="client_server" height="100" width="273" id="client_server_img">
+				<h2 class="main_content_heading_text">So What Actually Happens?</h2>
+				<ol class="main_content_body_lists">
+					<li>The browser goes to the <span class="light_blue_text">DNS server</span> and finds the real address of the server that the website lives on.</li>
+					<li>The browser sends an <span class="light_blue_text">HTTP requeset</span> message to the server asking it to send a copy of the website to the client.</li>
+					<li>If the server approves the client's request, the server sends the client a <span class="light_blue_text">"200 OK" message</span>, which means "Permission granted! Here you go!" , and then starts sending the website's files to the browser as a series of small chunks.</li>
+					<li>The browser assembles the small chunks into a complete website and displays it to you!</li>
+				</ol>
+				<div id="html_block_background">
+					<div id="html_block">
+						<img src="images/html.png" alt="html" width="120" height="109" id="html_image">
+						<div id="html_block_text">
+							<h2 class="main_content_heading_text">The Big 3 - HTML, CSS Javascript</h2>
+							<p class="main_content_body_text">While the server can process information in many different languages, the files that they serve to the client are always going to be some combination of HTML, CSS, and JavaScript!</p>
+							<p class="main_content_body_text" id="html_last_line">Learn more about the Big 3 <span class="light_blue_text">here</span>!</p>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

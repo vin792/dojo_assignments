@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div *ngIf="validLogin.status">
+    <div class="row" id="header">
+      <div class="col-sm-6">
+        <h1>Username: {{userDetails?.username}}</h1>
+      </div>
+      <div class="col-sm-offset-4 col-sm-2">
+        <br>
+        <div class="btn-group">
+          <a [routerLink] = "['/dashboard']" class="btn btn-link">Dashboard</a>
+          <button class="btn btn-link" (click) = "logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="content">
+      <div class="col-sm-6">
+        <h4>Posted...</h4>
+        <ul class="list-group">
+          <li class="list-group-item">{{userDetails?.topics.length}} Topics</li>
+          <li class="list-group-item">{{userDetails?.answers.length}} Posts</li>
+          <li class="list-group-item">{{userDetails?.comments.length}} Comments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!validLogin.status">
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <h4>Note-New Component</h4>
+    <form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
+        Title: <input type="text" name="title" [(ngModel)]="newNote.title" #title="ngModel" required>
+        Description: <input type="text" name="description" [(ngModel)]="newNote.description" #description="ngModel" required>
+        <button type="submit" [disabled]="!formData.form.valid">Add Note</button>
+    </form>
+</div>

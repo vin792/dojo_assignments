@@ -1,0 +1,30 @@
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	/*outline: 1px dotted red;*/
+}
+#container{
+	width: 970px;
+	height: 1000px;
+	margin: 0px auto;
+}
+.jquery_function{
+	text-align: center;
+	width: 970px;
+	border-bottom: 1px solid #333333;
+	margin-top: 10px;
+}
+#p_show{
+	display: none;
+}
+#p_slide_down{
+	display: none;
+}
+#p_fade_in{
+	display: none;
+}
+.myClass{
+	color: green;
+	font-size: 2em;
+}

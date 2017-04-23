@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#button").on("click",'.myButton' ,function(){
+				$(this).toggleClass('blue red');
+			})
+
+			$("#button").on('mouseover','.myButton',function(){
+				$(this).toggleClass('blue green');
+			})
+
+			$("#button").on("mouseout",'.myButton',function(){
+				$(this).toggleClass('blue green');
+			})
+
+		})
+
+		$(document).keypress(function(e){
+			if(e.which == 13){
+				$("#button").append("<button class=\"myButton blue\">Button</button>")
+			}
+		})
+
+	</script>
+
+	<style>
+		.blue{
+			background: blue;
+		}
+		.red{
+			background: red;
+		}
+		.green{
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="button">
+		<button class="myButton blue">Button</button>
+	</div>
+</body>
+</html>

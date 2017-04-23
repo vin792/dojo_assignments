@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>QuotingDojo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Welcome to QuotingDojo</h1>
+            </div>
+            <div class="row">
+                <form action="/addquote" method="post">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote">Your Quote</label>
+                        <textarea class="form-control" name="quote"></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Add my quote!</button>
+                        <a href="/quotes" class="btn btn-link">Skip to quotes</a>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <% if (!(typeof errors == 'undefined')) { %>
+                    <ul class="list-group">
+                        <% for (i in errors) { %>
+                            <li class="list-group-item"> <%= errors[i] %> </li>
+                        <% } %>
+                    </ul>
+                <% } %>
+                <ul>
+            </div>
+        </div>
+    </body>
+</html>

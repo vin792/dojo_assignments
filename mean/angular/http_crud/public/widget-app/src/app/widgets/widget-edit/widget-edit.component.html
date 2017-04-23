@@ -1,0 +1,5 @@
+<h3>Edit Widget Title</h3>
+<form (submit) = "saveWidgetTitle()" #formData = "ngForm">
+  New Title: <input type="text" name="title" [(ngModel)] = "newWidgetTitle" #title='ngModel' required>
+  <button type="submit" [disabled] = "!formData.form.valid">Save</button>
+</form>

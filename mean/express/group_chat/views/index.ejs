@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chat Room</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var socket = io.connect();
+                var person = prompt("Please enter your name");
+                socket.emit('new_user', {name: person});
+                
+                $('form').submit(function(event){
+                    event.preventDefault();
+                    data = $(this).serialize();
+                    socket.emit('new_message', {message: data});
+                    this.reset();
+                })
+
+                socket.on('display_new_message', function(data){
+                    $('.panel-body').append("<p>"+data.response+"</p>")
+                })
+
+                socket.on('user_disconnected', function(data){
+                    $('.panel-body').append("<p>"+data.response+"</p>")
+                })
+
+                socket.on('new_user_added', function(data){
+                    $('.panel-body').append("<p>"+data.response+"</p>")
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <h1>Conversation Board</h1>
+            </div>
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <% for (i=0; i<load.length; i++){ %>
+                            <p><%= load[i] %></p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <form action = "" method = "get">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input type="text" class="form-control" name="message">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

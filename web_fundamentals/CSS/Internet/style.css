@@ -1,0 +1,233 @@
+*{
+	 padding: 0;
+     margin: 0;
+     border: 0;
+     /*outline: 1px dotted red;*/
+}
+#container{
+	margin: 0px auto;
+	width: 970px;
+	height: 800px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#header{
+	width: 970px;
+	height: 137px;
+	display: inline-block;
+}
+#left_rail{
+	width: 210px;
+	height: 663px;
+	background: linear-gradient(#E6E6E6,#FFFFFF,#FFFFFF,#FFFFFF);
+	display: inline-block;
+	vertical-align: top;
+}
+#main_content{
+	width: 760px;
+	height: 663px;
+	background: linear-gradient(#E6E6E6,#FFFFFF,#FFFFFF,#FFFFFF);
+	display: inline-block;
+	margin-left: -5px;
+}
+#globe{
+	position: absolute;
+}
+#internet_header{
+	margin-left: 100px;
+	padding-top: 22px;
+	font-weight: 200;
+	font-size: 3em;
+	color: #4F4F4F;
+}
+#www_header{
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	color: white;
+	background:linear-gradient(#246FA6, #4683AF, #246FA6);
+	font-weight: 200;
+}
+.blue_text{
+	color:#0961A0;
+}
+#left_rail_question{
+	padding-top: 25px;
+	padding-left: 3px;
+	font-weight: 800;
+}
+#left_rail_answer{
+	padding-top: 15px;
+	padding-left: 3px;
+	font-weight: 800;
+	font-size: .8em;
+}
+#internet_question{
+	color:#ED0000;
+}
+#video_button{
+	width:190px;
+	height:35px;
+	line-height:35px;
+	margin-top: 20px;
+	text-align: center;
+	margin-left: 7px;
+	color: white;
+	background: linear-gradient(#4D91C1,#1167A4); 
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #333333;
+}
+#resource_button{
+	width:190px;
+	height:35px;
+	line-height:35px;
+	margin-top: 5px;
+	text-align: center;
+	margin-left: 7px;
+	color: white;
+	background: linear-gradient(#F4AA44,#FF7600); 
+	border-radius: 5px;
+	box-shadow: 2px 2px 2px #333333;
+}
+#line{
+	margin-top: 30px;
+	background-color: #A7A7A7;
+	height: 1px;
+	width: 190px;
+	margin-left:8px;
+}
+#ad{
+	background-image: url("images/ad_background.png");
+	width:200px;
+	height:300px;
+	margin-left: 4px;
+	margin-top: 30px;
+	text-align: center;
+}
+#ad_header{
+	font-weight: 200;
+	padding-top: 20px;
+	color: white;
+}
+#learn_more{
+	height: 30px;
+	width: 170px;
+	line-height:30px;
+	background-color: #00CBE2;
+	margin: 0px auto;
+	margin-top: 15px;
+	border-radius: 5px;
+	color: white;
+}
+#arrows{
+	color: white;
+	font-size: .5em;
+}
+#main_content_header{
+display: block:;
+}
+#home{
+	display: inline-block;
+	padding-left: 30px;
+	padding-top: 10px;
+	vertical-align: top;
+}
+#img_home{
+	display: inline-block;
+	vertical-align: center;
+}
+#p_home{
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 3px;
+	color: #003A96;
+}
+#phone{
+	display: inline-block;
+	margin-left: 445px;
+	padding-top: 2px;
+}
+#phone_text{
+	display: inline-block;
+	text-align: center;
+	padding-left: 5px;
+}
+.date{
+	font-size:.6em;
+	color: #797979;
+}
+#phone_number{
+	color: #00C1E3;
+}
+#line_main_content{
+	height: 1px;
+	margin-top: 15px;
+	margin-bottom: 8px;
+	margin-left: 30px;
+	width: 710px;
+	background-color: #A7A7A7;
+}
+.main_content_heading_text{
+	color:#004597;
+	font-size: 1.15em;
+	font-weight: 600;
+	padding-bottom: 3px;
+	padding-left: 30px;
+}
+.main_content_body_lists{
+	font-size: .9em;
+	padding-left: 70px;
+	padding-bottom: 5px;
+}
+.main_content_body_text{
+	font-size: .9em;
+	padding-left: 30px;
+	padding-right: 5px;
+}
+.main_content_body_lists li{
+	margin: 5px 0;
+	padding-right: 5px;
+}
+#client_server_img{
+	margin: 0px auto;
+	display: block;
+	padding-bottom: 10px;
+}
+#html_block_background{
+	background-color: #007EE5;
+	width:694px;
+	height:130px;
+	margin-left: 45px;
+	margin-top: 20px;
+	box-shadow: 2px 2px 2px #333333;
+}
+#html_block{
+	background-color: white;
+	width: 684px;
+	height: 125px;
+	margin-left: 5px;
+	margin-top: 5px;
+	display: inline-block;
+}
+#html_block_text{
+	display: inline-block;
+	width: 554px;
+	height: 109px;
+	vertical-align: top;
+	margin-top: 14px;
+	margin-left: -10px;
+}
+#html_image{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.main_content_body_text#html_last_line{
+	padding-top: 5px;
+}
+.light_blue_text{
+	color: #0092AC;
+}
+.bold{
+	font-weight: bold;
+}

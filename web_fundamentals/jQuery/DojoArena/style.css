@@ -1,0 +1,61 @@
+*{
+	border:0;
+	padding:0;
+	margin:0;
+}
+h1{
+	color: #ffbc11;
+	text-shadow: 2px 2px 2px white;
+	margin-top: 20px;
+}
+button{
+	width: 100px;
+	height: 40px;
+	margin-bottom: 10px; 
+	border-radius: 5px;
+	background-color: #f0f0f0;
+	font-size: 1em;
+	color: #3d3d3d;
+}
+select{
+	margin-right: 10px;
+}
+img{
+	width:250px; 
+	height:350px;
+}
+#container{
+	color: #f0f0f0;
+	width: 1440px;
+	height: 800px;
+}
+#background{
+	width: 1360px;
+	height: 720px;
+	background-color: black;
+	background-size: 1360px 720px;
+	border: 12px solid grey;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px auto;
+	margin-top: 28px;
+}
+#select_arena{
+	margin: 0px auto;
+	margin-top: 150px;
+	width: 350px;
+	height: 175px;
+	background-color: grey;
+	border-radius: 10px;
+	border: 5px solid #696969;
+	text-align: center;
+	display: block;
+}
+#buttons{
+	margin-top: 20px;
+}
+#img1{
+	margin-left: 200px;
+}
+#img2{
+	margin-left: 465px;
+}

@@ -1,0 +1,18 @@
+Pip practice
+
+- pip install Django
+-# installed Django package
+- pip list
+-# listed all currently installed packages
+- pip install Django
+-# showed that Django was already successfully installed
+- pip freeze
+-# displayed all installed packages in a specific format different from list
+- pip freeze > requirements.txt
+-# requirements.txt showed the pip freezen terminal output from the previous line
+- pip show Django
+-# showed information about the version of Django installed
+- pip uninstall Django
+-# uninstalled Django package
+- pip search Flask
+-# searched all available packages with the word 'flask' in either the title or summary

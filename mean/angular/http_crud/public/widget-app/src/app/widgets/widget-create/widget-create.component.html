@@ -1,0 +1,6 @@
+<h3>Create Widget</h3>
+<form (submit)="onSubmit()" #formData="ngForm">
+  Title:<input type="text" name="title" #title="ngModel" [(ngModel)]="newWidget.title" required>
+  <button type="submit" [disabled] = "!formData.form.valid">Add Widget</button>
+</form>
+

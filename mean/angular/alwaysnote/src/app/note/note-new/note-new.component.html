@@ -1,0 +1,8 @@
+<div>
+  <h4>Create a New Note</h4>
+  <form (submit) = "onSubmit(note)" #formData="ngForm">
+    Note:<input type="text" [(ngModel)] = "newNote.note" name="note" #note='ngModel' required minlength="5">
+    <button type="submit" [disabled] = '!formData.form.valid'>Add Note</button>
+    <div *ngIf = "note.dirty&&!note.valid">{{note.errors | json}}</div>
+  </form>
+</div>

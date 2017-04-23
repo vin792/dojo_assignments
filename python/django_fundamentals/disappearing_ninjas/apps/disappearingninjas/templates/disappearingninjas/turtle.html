@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Ninja Turtle</title>
+		{% load static %}
+	</head>
+	<body>
+		{% with "disappearingninjas/IMG/"|add:turtle as image_static %}
+			<img src="{% static image_static %}">
+		{%endwith%}
+	</body>
+</html>

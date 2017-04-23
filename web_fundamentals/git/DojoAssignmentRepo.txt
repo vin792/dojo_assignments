@@ -1,0 +1,12 @@
+cd Desktop/DojoAssignments
+git init
+git add .
+git commit -m "created folders for dojo assignments"
+git remote add origin https://github.com/vin792/DojoAssignments.git
+git push -u origin master
+touch readme.md
+vi readme.md
+git status
+git add .
+git commit -m "added readme file describing contents of directory"
+git push -u origin master

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vinmymyvc</title>
+</head>
+<body>
+<form action='/new_user' method = 'post'>
+	{{ request.session.first_name }}
+	{% csrf_token %}
+	<input type="text" name="first_name">
+	<input type="submit" value="submit">
+</form>
+</body>
+</html>

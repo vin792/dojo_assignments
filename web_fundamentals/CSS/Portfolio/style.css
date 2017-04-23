@@ -1,0 +1,147 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	/*outline: 1px dotted red;*/
+}
+table {
+  border-collapse: separate;
+  border-spacing: 5px 0;
+}
+a {
+	font-style: italic;
+	text-decoration: underline;
+	color: #333333;
+}
+#container{
+	width: 970px;
+	height: 1080px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px auto;
+}
+#header{
+	background-color: #F7F7F7;
+	width: 98%;
+	height: 6%;
+	padding-left: 2%;
+}
+#header_name{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	display: inline-block;
+	line-height: 350%
+}
+#header_subtitle{
+	display: inline-block;
+	margin-left: 42%;
+	line-height: 350%
+}
+#main_content{
+	background: radial-gradient(#1F0F13, #6F5964, #1F0F13);
+	width: 95%;
+	height: 86%;
+	padding: 2% 2.5% 2% 2.5%;
+}
+#about{
+	width: 100%;
+	height: 290px;
+}
+#about_photo{
+	width: 425px;
+	height: 100%;
+	background-color:#C0C0C0;
+	display: inline-block;
+	margin-right: 15px;
+}
+#about_bio{
+	display: inline-block;
+	vertical-align: top;
+	width: 476px;
+	height: 100%;
+}
+.grey_header{
+	width: 98%;
+	height: 40px;
+	display: block;
+	line-height: 40px;
+	padding-left: 2%;
+	color: #FFFFF8;
+	background: linear-gradient(#878593, #A7A6AC);
+}
+#about_bio_body{
+	width: 98%;
+	height: 85%;
+	background-color:#DFD3DF;
+	display:block;
+	padding-left: 2%;
+	padding-top: 1%
+}
+#projects{
+	width: 100%;
+	height: 610px;
+	margin-top: 20px;
+}
+.project_details{
+	background-color: black;
+	width: 292px;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+}
+.project_details_top{
+	width: 100%;
+	height: 65%;
+	background-color: #DFD3DF;
+	display: block;
+}
+.project_details_bottom{
+	width: 100%;
+	height: 27%;
+	background-color: #DFD3DF;
+}
+.project_details_bottom table{
+  	border-collapse: separate;
+  	border-spacing: 15px 8px;
+  	margin-top: 5px;
+}
+.project_details p{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.project_details_bottom_button{
+	width = 100%;
+	height: 8%;
+	background-color: #DFD3DF;
+	text-align: center;
+}
+.button{
+	color: white;
+	display: inline-block;
+	background-color: #407D61;
+	border: 1px solid #333333;
+	border-radius: 5px;
+	height: 20px;
+	line-height: 0px;
+	box-shadow: 3px 3px 3px #888888;
+}
+#footer{
+	background-color: #F7F7F7;
+	width: 100%;
+	height: 7%;
+}
+#footer_top{
+	height: 50%;
+	width: 100%;
+	text-align: center;
+	line-height: 200%;
+}
+#footer_bottom{
+	margin: 0px auto;
+}
+#footer_bottom table{
+	margin: 0px auto;
+}
+
+
+
+

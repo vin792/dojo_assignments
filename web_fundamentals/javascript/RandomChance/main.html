@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		"use strict";
+
+		function slots(numQuarters){
+			while (numQuarters > 0)
+			{
+				var usrNum = Math.trunc(Math.random()*100)+1;
+
+				if(usrNum === 5){
+					var numCoins = numQuarters + Math.trunc(Math.random() * 50) + 51;
+
+					console.log("You win!");
+					console.log("You have", numCoins, "quarters");
+					return numCoins;
+				} else {
+					numQuarters--;
+				}
+			}
+
+			console.log("You lost!");
+			return(numQuarters);
+		}
+
+		slots(2);
+	</script>
+	<title>Random Chance</title>
+</head>
+<body>
+
+</body>
+</html>

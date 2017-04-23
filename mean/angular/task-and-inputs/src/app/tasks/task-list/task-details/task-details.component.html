@@ -1,0 +1,9 @@
+<div>
+  <h3>Task Details Component</h3>
+  <p>Task Title: {{task.title}}</p>
+  <div class="task_status" [ngClass]="{complete: task.completed, incomplete: !task.completed}">
+    <p>Task Completed: {{task.completed}}</p>
+    <button *ngIf="task.completed" (click)='task.changeStatus()'>Mark Incomplete</button>
+    <button *ngIf="!task.completed" (click)='task.changeStatus()'>Mark Complete</button>
+  </div>
+</div>

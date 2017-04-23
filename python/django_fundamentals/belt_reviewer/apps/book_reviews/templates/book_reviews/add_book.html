@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title></title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row" id="header">
+				<div class="col-sm-6" id="name">
+					<h2>Add a New Book and Review</h2>
+				</div>
+				<div class="col-sm-3 col-sm-offset-3" id="actions">
+					<br>
+					<div class="btn-group">
+  						<a href="{% url 'books:index' %}" class="btn btn-link">Home</a>
+  						<a href="{% url 'login:index' %}" class="btn btn-link">Logout</a>
+					</div>
+				</div>
+			</div>
+			<div class="row col-sm-6" id="content">
+				<form action="{% url 'books:create_book' %}" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="title">Book Title</label>
+						<input type="text" name="title" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="existing_author">Select Author</label>
+						<select class="form-control" name="existing_author">
+							<option value="ignore">Choose Author</option>
+							{% for author in authors %}
+								<option value="{{author}}">{{author.name.title}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="new_author">...Or Add a New Author</label>
+						<input type="text" name="new_author" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="review">Review</label>
+						<textarea name="review" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="rating">Rating</label>
+						<select class="form-control" name="rating">
+							<option value="1">1</option>
+    						<option value="2">2</option>
+    						<option value="3">3</option>
+    						<option value="4">4</option>
+    						<option value="5">5</option>
+						</select>
+					</div>
+					<button type="submit" class="btn btn-primary">Add Book and Review</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

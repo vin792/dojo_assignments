@@ -1,0 +1,8 @@
+<div>
+  <h4>Edit Note</h4>
+  <form (submit) = "onSubmit()" #formData = 'ngForm'> 
+    Edit Note: <input type="text" [(ngModel)] = "changeNote" name="note" #note = 'ngModel' required minlength="5">
+    <button type="submit" [disabled] = '!formData.form.valid'>Save</button>
+    <button (click) = "cancelSubmit()">Cancel</button>
+  </form>
+</div>
