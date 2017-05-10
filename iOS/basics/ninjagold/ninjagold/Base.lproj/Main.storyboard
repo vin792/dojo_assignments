@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ninjagold" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kno-Li-mRP">
+                                <rect key="frame" x="16" y="28" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb6-yu-aTS">
+                                <rect key="frame" x="16" y="119" width="35" height="30"/>
+                                <state key="normal" title="Cave"/>
+                                <connections>
+                                    <action selector="buildingBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTb-BZ-njt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-tt-blo">
+                                <rect key="frame" x="16" y="169" width="45" height="30"/>
+                                <state key="normal" title="House"/>
+                                <connections>
+                                    <action selector="buildingBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ah9-JK-3Vl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENC-kg-oa7">
+                                <rect key="frame" x="16" y="219" width="47" height="30"/>
+                                <state key="normal" title="Casino"/>
+                                <connections>
+                                    <action selector="buildingBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CDU-5P-E7p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZl-qL-2cp">
+                                <rect key="frame" x="16" y="352" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ojv-fb-OfX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijU-A0-3ZY">
+                                <rect key="frame" x="16" y="69" width="35" height="30"/>
+                                <state key="normal" title="Farm"/>
+                                <connections>
+                                    <action selector="buildingBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVa-a9-lXk"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pET-uO-NLM">
+                                <rect key="frame" x="59" y="75" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HaY-oF-NRZ">
+                                <rect key="frame" x="59" y="125" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL5-b9-Rgs">
+                                <rect key="frame" x="69" y="176" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaY-MS-tiw">
+                                <rect key="frame" x="71" y="226" width="37.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fb6-yu-aTS" firstAttribute="top" secondItem="ijU-A0-3ZY" secondAttribute="bottom" constant="20" id="02t-Um-AUt"/>
+                            <constraint firstItem="ijU-A0-3ZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Os-Lb-ghk"/>
+                            <constraint firstItem="HaY-oF-NRZ" firstAttribute="top" secondItem="pET-uO-NLM" secondAttribute="bottom" constant="32" id="2Y3-jl-Uf5"/>
+                            <constraint firstItem="kno-Li-mRP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Vl-FN-Wng"/>
+                            <constraint firstItem="bL5-b9-Rgs" firstAttribute="leading" secondItem="BgD-tt-blo" secondAttribute="trailing" constant="8" id="8lU-Hg-K6j"/>
+                            <constraint firstItem="ijU-A0-3ZY" firstAttribute="top" secondItem="kno-Li-mRP" secondAttribute="bottom" constant="20" id="Bs5-1B-bBX"/>
+                            <constraint firstItem="Fb6-yu-aTS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CGU-vt-xdn"/>
+                            <constraint firstItem="BgD-tt-blo" firstAttribute="top" secondItem="Fb6-yu-aTS" secondAttribute="bottom" constant="20" id="HNj-D5-ush"/>
+                            <constraint firstItem="ENC-kg-oa7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Nvo-ea-08l"/>
+                            <constraint firstItem="pET-uO-NLM" firstAttribute="leading" secondItem="ijU-A0-3ZY" secondAttribute="trailing" constant="8" id="UIQ-0I-2qt"/>
+                            <constraint firstItem="HaY-oF-NRZ" firstAttribute="leading" secondItem="Fb6-yu-aTS" secondAttribute="trailing" constant="8" id="XPD-3c-G9B"/>
+                            <constraint firstItem="RZl-qL-2cp" firstAttribute="top" secondItem="ENC-kg-oa7" secondAttribute="bottom" constant="103" id="akk-H4-gj9"/>
+                            <constraint firstItem="kno-Li-mRP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bec-6H-6zI"/>
+                            <constraint firstItem="BgD-tt-blo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bid-Dt-C2K"/>
+                            <constraint firstItem="RZl-qL-2cp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eMj-sH-kWT"/>
+                            <constraint firstItem="ENC-kg-oa7" firstAttribute="top" secondItem="BgD-tt-blo" secondAttribute="bottom" constant="20" id="oAR-6s-jxS"/>
+                            <constraint firstItem="pET-uO-NLM" firstAttribute="top" secondItem="kno-Li-mRP" secondAttribute="bottom" constant="26" id="q5m-QU-4Kx"/>
+                            <constraint firstItem="bL5-b9-Rgs" firstAttribute="top" secondItem="HaY-oF-NRZ" secondAttribute="bottom" constant="33" id="xrb-ip-lTc"/>
+                            <constraint firstItem="iaY-MS-tiw" firstAttribute="leading" secondItem="ENC-kg-oa7" secondAttribute="trailing" constant="8" id="y16-Nd-Gk2"/>
+                            <constraint firstItem="iaY-MS-tiw" firstAttribute="top" secondItem="bL5-b9-Rgs" secondAttribute="bottom" constant="32" id="yxD-p5-u6y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="casinoLabel" destination="iaY-MS-tiw" id="eXq-aN-Ohm"/>
+                        <outlet property="caveLabel" destination="HaY-oF-NRZ" id="p0b-Eb-nqC"/>
+                        <outlet property="farmLabel" destination="pET-uO-NLM" id="xyB-qw-z1r"/>
+                        <outlet property="houseLabel" destination="bL5-b9-Rgs" id="yCD-PL-mi7"/>
+                        <outlet property="scoreLabel" destination="kno-Li-mRP" id="C2b-DU-6cL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
