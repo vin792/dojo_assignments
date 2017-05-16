@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="northsoutheastwest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjZ-Ma-jol">
+                                <rect key="frame" x="167" y="20" width="40" height="30"/>
+                                <state key="normal" title="North"/>
+                                <connections>
+                                    <action selector="directionBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqQ-IM-vCc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMu-5W-3wf">
+                                <rect key="frame" x="329" y="318" width="30" height="30"/>
+                                <state key="normal" title="East"/>
+                                <connections>
+                                    <action selector="directionBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOk-of-K6b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKp-eA-pIQ">
+                                <rect key="frame" x="166.5" y="617" width="41" height="30"/>
+                                <state key="normal" title="South"/>
+                                <connections>
+                                    <action selector="directionBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mLF-xq-R1n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mp2-72-F2X">
+                                <rect key="frame" x="16" y="318" width="35" height="30"/>
+                                <state key="normal" title="West"/>
+                                <connections>
+                                    <action selector="directionBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hWW-bW-5s0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gjZ-Ma-jol" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0CX-Ug-Ilj"/>
+                            <constraint firstItem="YMu-5W-3wf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="53U-LL-y0o"/>
+                            <constraint firstItem="gjZ-Ma-jol" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9LK-Tt-JMg"/>
+                            <constraint firstItem="YMu-5W-3wf" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JAH-Q9-6ya"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UKp-eA-pIQ" secondAttribute="bottom" constant="20" id="Zlm-09-6O5"/>
+                            <constraint firstItem="Mp2-72-F2X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kNw-KA-7BL"/>
+                            <constraint firstItem="UKp-eA-pIQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lq6-uH-KEy"/>
+                            <constraint firstItem="Mp2-72-F2X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mTa-Zg-G7d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="HVS-AI-VSI" kind="presentation" identifier="DirectionDetailSegue" id="LDe-Vw-uXN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Direction Detail View Controller-->
+        <scene sceneID="i4O-Kv-w2p">
+            <objects>
+                <viewController id="HVS-AI-VSI" customClass="DirectionDetailViewController" customModule="northsoutheastwest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlz-D1-YPG"/>
+                        <viewControllerLayoutGuide type="bottom" id="AWE-CJ-xW3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="69L-EX-DIo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3C-2G-oNA">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="directnBtnPressed:" destination="HVS-AI-VSI" eventType="touchUpInside" id="1Ob-iA-sjh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J3C-2G-oNA" firstAttribute="centerX" secondItem="69L-EX-DIo" secondAttribute="centerX" id="8cJ-tg-u4T"/>
+                            <constraint firstItem="J3C-2G-oNA" firstAttribute="centerY" secondItem="69L-EX-DIo" secondAttribute="centerY" id="hxt-ys-t8G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="directionBtnLabel" destination="J3C-2G-oNA" id="shE-oz-eS8"/>
+                        <segue destination="M4x-tv-4v7" kind="unwind" identifier="unwindtoHome" unwindAction="unwindtoHomeWithSegue:" id="3DG-C5-3Yf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clU-dZ-RsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="M4x-tv-4v7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
