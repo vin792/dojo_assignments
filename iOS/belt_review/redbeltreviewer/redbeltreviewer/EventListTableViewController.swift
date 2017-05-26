@@ -29,11 +29,13 @@ class EventListTableViewController: UITableViewController {
     }
 
     //Tableview functions
+    ////Set # of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return events.count
     }
-
+    
+    ////Set cell data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
         //cell.eventDetailLabel.text = events[indexPath.row].title
@@ -60,6 +62,7 @@ class EventListTableViewController: UITableViewController {
         return cell
     }
     
+    ////Delete cell
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let deleteEvent = events[indexPath.row]
         managedObjectContext.delete(deleteEvent)
@@ -69,7 +72,8 @@ class EventListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    //CoreData - fetch all items
+    //CoreData functions
+    ////Fetch all items
     func fetchAllEvents() {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
@@ -83,7 +87,7 @@ class EventListTableViewController: UITableViewController {
         }
     }
     
-    //CoreData - save
+    ////save all items
     func saveItem() {
         do {
             try managedObjectContext.save()
@@ -93,7 +97,7 @@ class EventListTableViewController: UITableViewController {
     }
 }
 
-//AddEditEventDelegate Functions
+//AddEditEventDelegate functions
 extension EventListTableViewController: AddEditEventDelegate {
     func addItem(eventTitle: String, eventInfo: String, eventDate: Date) {
         let newEvent = NSEntityDescription.insertNewObject(forEntityName: "Event", into: managedObjectContext) as! Event
@@ -118,7 +122,7 @@ extension EventListTableViewController: AddEditEventDelegate {
     }
 }
 
-//Event Cell Delegate
+//Event cell delegate functions
 extension EventListTableViewController: EventCellDelegate {
     func complete(btnPressed: UIButton, eventRow: IndexPath) {
         if events[eventRow.row].completed {
@@ -135,7 +139,6 @@ extension EventListTableViewController: EventCellDelegate {
     }
     
     func edit(eventRow: IndexPath) {
-        
         let index = navigationController?.viewControllers.count
         let previousController = navigationController?.viewControllers[index! - 2] as! EventAddEditViewController
         previousController.eventInfoTextField.text = events[eventRow.row].info
